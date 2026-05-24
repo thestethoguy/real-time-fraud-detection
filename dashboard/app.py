@@ -6,6 +6,7 @@ Author: Aman Aaryan | Role: Lead ML Engineer
 """
 
 # ── Standard imports ──────────────────────────────────────────────────────────
+import os
 import warnings
 import numpy as np
 import pandas as pd
@@ -75,8 +76,12 @@ TIER_COLORS = {
 }
 TIER_ORDER = ["Critical Risk", "Suspicious", "Clear"]
 
-MODEL_PATH  = "model.pkl"
-DATA_PATH   = "sample_transactions.csv"
+# Absolute paths anchored to this file's directory — works regardless of CWD.
+# On Streamlit Cloud the working directory is the repo root, not dashboard/,
+# so bare filenames would silently fail. __file__ always resolves correctly.
+_DASHBOARD_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH     = os.path.join(_DASHBOARD_DIR, "model.pkl")
+DATA_PATH      = os.path.join(_DASHBOARD_DIR, "sample_transactions.csv")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CACHED LOADERS  (load once, reuse across reruns)
