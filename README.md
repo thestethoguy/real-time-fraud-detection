@@ -1,9 +1,9 @@
 # 🛡️ Real-Time Fraud Detection System
 ### IEEE-CIS Fraud Detection — Capstone Project
 
-**Author:** Aman Aaryan | **Role:** Lead ML Engineer  
+**Author:** Aman Aaryan |  
 **Dataset:** IEEE-CIS Fraud Detection (Kaggle)  
-**Live Dashboard URL:** [Insert Streamlit Link Here]
+**Live Dashboard URL:** https://real-time-fraud-detection-psfsa6cwf9svdd7auvjz8n.streamlit.app
 
 ---
 
