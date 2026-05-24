@@ -3,7 +3,6 @@ data/
 *.csv
 
 # ── Model Artifacts (too large for Git; use DVC or Git LFS instead) ──────────
-dashboard/model.pkl
 *.pkl
 *.joblib
 
@@ -43,3 +42,9 @@ desktop.ini
 *.log
 *.tmp
 outputs/*.png
+
+# ── Dashboard assets — explicit exceptions (MUST be at the bottom) ──────────────
+# The ! prefix negates the *.pkl and *.csv wildcard rules above,
+# ensuring Streamlit Cloud always has the model and sample data.
+!dashboard/model.pkl
+!dashboard/sample_transactions.csv
