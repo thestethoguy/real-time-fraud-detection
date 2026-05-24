@@ -205,12 +205,7 @@ if page == "Overview":
             x=0.5, y=0.5, showarrow=False,
             font=dict(size=14, color="white"),
         )
-        fig_donut.update_layout(
-            showlegend=True,
-            legend=dict(font=dict(color="white"), bgcolor="rgba(0,0,0,0)"),
-            margin=dict(t=10, b=10, l=10, r=10),
-            height=380,
-        )
+        fig_donut.update_layout(showlegend=True, height=380)
         st.plotly_chart(fig_donut, use_container_width=True)
 
     with col_right:
@@ -231,17 +226,7 @@ if page == "Overview":
                 },
                 hover_data={"Risk_Tier": True, "FraudProb": ":.3f"},
             )
-            fig_scatter.update_layout(
-                font=dict(color="white"),
-                coloraxis_colorbar=dict(
-                    title="P(Fraud)", tickfont=dict(color="white"),
-                    titlefont=dict(color="white"),
-                ),
-                xaxis=dict(gridcolor="#2a2a3e", title_font=dict(color="#aaa")),
-                yaxis=dict(gridcolor="#2a2a3e", title_font=dict(color="#aaa")),
-                margin=dict(t=10, b=40, l=10, r=10),
-                height=380,
-            )
+            fig_scatter.update_layout(height=380)
             st.plotly_chart(fig_scatter, use_container_width=True)
         else:
             st.info("HourOfDay / TransactionAmt columns not found in sample.")
