@@ -234,8 +234,6 @@ if page == "Overview":
                 hover_data={"Risk_Tier": True, "FraudProb": ":.3f"},
             )
             fig_scatter.update_layout(
-                paper_bgcolor="rgba(0,0,0,0)",
-                plot_bgcolor="rgba(26,26,46,1)",
                 font=dict(color="white"),
                 coloraxis_colorbar=dict(
                     title="P(Fraud)", tickfont=dict(color="white"),
