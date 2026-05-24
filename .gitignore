@@ -1,0 +1,45 @@
+# ── Large Data Files (never commit Kaggle CSVs) ──────────────────────────────
+data/
+*.csv
+
+# ── Model Artifacts (too large for Git; use DVC or Git LFS instead) ──────────
+dashboard/model.pkl
+*.pkl
+*.joblib
+
+# ── Archives ──────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tar
+
+# ── Python Cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Jupyter Artifacts ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Virtual Environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Streamlit secrets ─────────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ── Logs & temp ───────────────────────────────────────────────────────────────
+*.log
+*.tmp
+outputs/*.png
