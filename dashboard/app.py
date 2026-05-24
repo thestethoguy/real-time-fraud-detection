@@ -206,8 +206,6 @@ if page == "Overview":
             font=dict(size=14, color="white"),
         )
         fig_donut.update_layout(
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)",
             showlegend=True,
             legend=dict(font=dict(color="white"), bgcolor="rgba(0,0,0,0)"),
             margin=dict(t=10, b=10, l=10, r=10),
