@@ -384,10 +384,14 @@ elif page == "SHAP Explainer":
 
     txn_row = df[row_mask].iloc[[0]]
 
-    # ── Drop non-feature columns before SHAP ─────────────────────────────────
-    DROP_COLS = {"TransactionID", "FraudProb", "Risk_Tier", "TrueLabel"}
-    feature_cols = [c for c in df.columns if c not in DROP_COLS]
-    X_row = txn_row[feature_cols].select_dtypes(include=[np.number])
+    # ── Filter to ONLY the features the model was trained on ─────────────────
+    # model.feature_name_ is the authoritative list of 432 training features
+    # (LightGBM native API). sample_transactions.csv has 434 columns because
+    # it also carries dashboard meta-columns (TransactionID, FraudProb,
+    # Risk_Tier, TrueLabel). Slicing by expected_features eliminates the
+    # mismatch and is future-proof against any other added meta-columns.
+    expected_features = model.feature_name_
+    X_row = txn_row[expected_features]
 
     # ── Transaction summary card ──────────────────────────────────────────────
     tier    = str(txn_row["Risk_Tier"].iloc[0])
